@@ -5,6 +5,7 @@ import { BasePage } from "../page/base-page.page";
 import { LoginPage } from "../page/login.page";
 import { RegisterPage } from "../page/register.page";
 import { HomePage } from "../page/home.page";
+import { EMAIL, PASSWORD } from "../constants/common";
 
 test.beforeEach(async ({ page }) => {
   const loginPage = new LoginPage(page);
@@ -16,7 +17,7 @@ test.beforeEach(async ({ page }) => {
 
   await registerPage.clickOnSignUpLoginButton();
 
-  await loginPage.enterLoginForm("ailinhno1@gmail.com", "123123");
+  await loginPage.enterLoginForm(EMAIL as string, PASSWORD as string);
 
   await loginPage.clickLoginBtn();
 
